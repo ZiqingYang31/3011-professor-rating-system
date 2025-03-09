@@ -6,6 +6,7 @@ def home(request):
     return HttpResponse("Welcome to the Professor Rating System! Navigate to /rating/")
 
 urlpatterns = [
+    path('', home, name='home'), 
     path('admin/', admin.site.urls),
     path('rating/', include('rating_app.urls')),  
 ]
