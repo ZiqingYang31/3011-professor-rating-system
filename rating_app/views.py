@@ -98,6 +98,11 @@ class RatingCreateView(generics.CreateAPIView):
 User = get_user_model()
 
 class RegisterView(APIView):
+    def get(self, request):
+        return Response({
+            "message": "To register, send a POST request with the following fields:",
+            "required_fields": ["username", "email", "password"]
+        })
 
     def post(self, request):
         username = request.data.get("username")
